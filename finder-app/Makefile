@@ -1,4 +1,4 @@
-COMPILER = $(CROSS_COMPILE)gcc
+COMPILER = $(CC)
 
 all: writer.o
 	$(COMPILER) writer.o -o writer
