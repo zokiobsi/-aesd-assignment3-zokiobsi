@@ -1,13 +1,13 @@
-#TODO check CC is defined to overwrite, add CROSS_COMPILE arguement 
-
-COMPILER = $(CC)
+CC ? = gcc
+CFLAGS ?=
+LDFLAGS ?=
 
 all: aesdsocket.o
-	$(COMPILER) aesdsocket.o -o aesdsocket
+	$(CC) $(CFLAGS) aesdsocket.o -o aesdsocket $(LDFLAGS)
 	chmod +x aesdsocket
 
 aesdsocket.o: aesdsocket.c
-	$(COMPILER) -c aesdsocket.c
+	$(CC) $(CFLAGS) -c aesdsocket.c
 
 clean:
 	rm -f aesdsocket.o aesdsocket
